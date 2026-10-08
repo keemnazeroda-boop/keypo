@@ -1,0 +1,2050 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'MungyeongGamhongApple';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2410-2@1.0/Mungyeong-Gamhong-Apple.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+:root {
+    --blue: #3471f8;
+    --dark: #1d1d1d;
+    --gray: #737983;
+    --black: #151515;
+    --deep-black: #111111;
+    --gray-light: #8A8A8A;
+    --gray-line: #D8D8D8;
+    --off-white: #F7F7F7;
+    --white: #FFFFFF;
+    --footer-line: #292E36;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: var(--white);
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    color: #1d1d1d;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: none;
+}
+
+/* =========================================================
+   GLOBAL PAGE / 1920px FIGMA ARTBOARD
+========================================================= */
+
+.page {
+    width: 100%;
+    min-width: 320px;
+    overflow: hidden;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 48px;
+
+    background: #fff;
+
+    z-index: 1000;
+}
+
+.logo img {
+    display: block;
+    max-width: 100%;
+}
+
+.header nav {
+    position: absolute;
+
+    left: 50%;
+    top: 31px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+
+    gap: 53px;
+
+    height: 19px;
+
+    color: var(--gray);
+
+    font-size: 16px;
+    font-weight: 500;
+
+    line-height: 19px;
+
+    white-space: nowrap;
+}
+
+.header nav a {
+    height: 19px;
+
+    display: flex;
+    align-items: center;
+
+    line-height: 19px;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.header nav a:hover {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.header-download {
+    width: 160px;
+    height: 46px;
+
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1d1d1d;
+    color: #fff;
+
+    border-radius: 999px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    line-height: 18px;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.header-download:hover {
+    background: var(--blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(29, 29, 29, 0.16);
+}
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.hero,
+.editors-pick,
+.feature-story,
+.more-to-read,
+.journal,
+.footer {
+    position: relative;
+    width: 100%;
+}
+
+.section-heading h2 {
+    height: 24px;
+    color: var(--black);
+    font-size: 25px;
+    line-height: 22.5px;
+    font-weight: 600;
+}
+
+.section-heading p {
+    margin-top: 6px;
+    min-height: 36px;
+    color: var(--gray-light);
+    font-size: 16px;
+    line-height: 16.25px;
+    font-weight: 400;
+}
+
+.meta {
+    color: var(--gray);
+    font-size: 11px;
+    line-height: 13.75px;
+    font-weight: 600;
+    height: 18px;
+}
+
+.thin-line {
+    width: 100%;
+    height: 1px;
+    background: var(--gray-line);
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--black);
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.text-link span,
+.journal-button span,
+.row-read b {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(.22,.61,.36,1);
+}
+
+.text-link:hover {
+    color: var(--blue);
+}
+
+.text-link:hover span,
+.journal-button:hover span {
+    transform: translateX(5px);
+}
+
+/* =========================================================
+   HERO — Figma section starts at y=76, height 930
+========================================================= */
+
+.hero {
+    height: 930px;
+    background: var(--white);
+    overflow: hidden;
+}
+
+.hero-image-link {
+    display: block;
+    position: absolute;
+    left: 120px;
+    top: 115px;
+    width: 1120px;
+    height: 690px;
+    overflow: hidden;
+    background: #EDEDED;
+}
+
+.hero-image-link img,
+.feature-image-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.75s cubic-bezier(.22,.61,.36,1);
+}
+
+.hero-image-link:hover img,
+.feature-image-link:hover img {
+    transform: scale(1.018);
+}
+
+.hero-overlay {
+    position: absolute;
+    left: 144px;
+    top: 679px;
+    width: 620px;
+    height: 92px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: rgba(17, 17, 17, 0.9);
+    color: var(--white);
+    transition: transform 0.35s cubic-bezier(.22,.61,.36,1);
+}
+
+.hero-overlay:hover {
+    transform: translateY(-3px);
+}
+
+.eyebrow {
+    display: block;
+    color: inherit;
+    font-size: 11px;
+    line-height: 13.75px;
+    font-weight: 600;
+}
+
+.hero-overlay strong {
+    display: block;
+    margin-top: 4px;
+    font-size: 21px;
+    line-height: 26.25px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.hero-overlay .eyebrow {
+    margin: 0;
+    text-align: left;
+}
+
+.hero-side {
+    position: absolute;
+    left: 1310px;
+    top: 115px;
+    width: 500px;
+}
+
+.hero-side h1 {
+    margin-top: 16px;
+    width: 500px;
+    min-height: 90px;
+    font-size: 36px;
+    line-height: 45px;
+    font-weight: 600;
+}
+
+.hero-body {
+    margin-top: 28px;
+    width: 500px;
+    min-height: 110px;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+}
+
+.hero-side .thin-line {
+    margin-top: 30px;
+}
+
+.small-title {
+    margin-top: 24px;
+    height: 18px;
+    color: var(--black);
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 600;
+}
+
+.topic-copy {
+    margin-top: 14px;
+    width: 500px;
+    min-height: 120px;
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.hero-side .text-link {
+    min-height: 30px;
+    height: 30px;
+    padding: 5px 2px;
+    margin-top: 70px;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+/* =========================================================
+   EDITOR'S PICK — Figma y=1006, h=730
+========================================================= */
+
+.editors-pick {
+    height: 730px;
+    background: var(--white);
+    overflow: hidden;
+}
+
+.editors-pick .section-heading {
+    position: absolute;
+    left: 120px;
+    top: 34px;
+}
+
+.editors-pick .section-heading p {
+    margin-top: 14px;
+}
+
+.pick-list {
+    position: absolute;
+    left: 120px;
+    top: 124px;
+    width: 1680px;
+}
+
+.pick-row {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 169px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.pick-row::after,
+.more-row::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 146px;
+    height: 1px;
+    background: var(--gray-line);
+    z-index: 0;
+}
+
+.row-number,
+.row-category {
+    position: absolute;
+    left: 0;
+    top: 18px;
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 17.5px;
+    font-weight: 600;
+    transition: transform 0.35s cubic-bezier(.22,.61,.36,1), color 0.25s ease;
+}
+
+.row-content {
+    position: absolute;
+    left: 90px;
+    top: 18px;
+    width: calc(100% - 340px);
+    min-width: 0;
+    display: block;
+    transition: transform 0.35s cubic-bezier(.22,.61,.36,1);
+}
+
+.row-content strong {
+    display: block;
+    width: 100%;
+    height: 52px;
+    min-height: 52px;
+    color: var(--black);
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.row-content > span {
+    position: absolute;
+    left: 0;
+    top: 59px;
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    margin: 0;
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
+    transition: color 0.25s ease;
+}
+
+.row-read {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    color: var(--gray);
+    font-size: 11px;
+    line-height: 13.75px;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.25s ease, transform 0.35s cubic-bezier(.22,.61,.36,1), color 0.25s ease;
+}
+
+.pick-row:hover .row-number,
+.pick-row:hover .row-content,
+.more-row:hover .row-category,
+.more-row:hover .row-content {
+    transform: translateX(8px);
+}
+
+.pick-row:hover .row-read,
+.more-row:hover .row-read {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--blue);
+}
+
+
+/* =========================================================
+   FEATURE STORY — Figma y=1820, h=950
+========================================================= */
+
+
+.feature-story {
+    height: 950px;
+    margin-top: 84px;
+    background: var(--off-white);
+    overflow: hidden;
+}
+
+.feature-story .section-heading {
+    position: absolute;
+    left: 120px;
+    top: 34px;
+}
+
+.feature-story .section-heading p {
+    margin-top: 14px;
+}
+
+.feature-image-link {
+    display: block;
+    position: absolute;
+    left: 120px;
+    top: 115px;
+    width: 1050px;
+    height: 650px;
+    overflow: hidden;
+    border: 1px solid var(--gray-line);
+    background: #EDEDED;
+}
+.feature-label {
+    position: absolute;
+    left: 17px;
+    top: 16px;
+    color: #666666;
+    font-size: 11px;
+    line-height: 13.75px;
+    font-weight: 600;
+}
+
+.feature-overlay {
+    position: absolute;
+    left: 23px;
+    top: 524px;
+    width: 620px;
+    height: 92px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: rgba(17, 17, 17, 0.9);
+    color: var(--white);
+}
+
+.feature-overlay strong {
+    display: block;
+    margin-top: 4px;
+    font-size: 21px;
+    line-height: 26.25px;
+    font-weight: 600;
+}
+
+.feature-side {
+    position: absolute;
+    left: 1240px;
+    top: 120px;
+    width: 500px;
+}
+
+.feature-side h3 {
+    margin-top: 16px;
+    width: 500px;
+    min-height: 100px;
+    color: var(--black);
+    font-size: 36px;
+    line-height: 45px;
+    font-weight: 600;
+}
+
+.feature-body {
+    margin-top: 28px;
+    width: 500px;
+    min-height: 110px;
+    color: var(--black);
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+}
+
+.feature-side .thin-line {
+    margin-top: 49px;
+}
+
+.feature-list {
+    margin-top: 25px;
+    min-height: 120px;
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.feature-side .text-link {
+    height: 22px;
+    margin-top: 54px;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.feature-footnote {
+    margin-top: 52px;
+    color: var(--gray-light);
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+/* =========================================================
+   MORE TO READ — Figma y=2770, h=503
+========================================================= */
+
+.more-to-read {
+    height: 730px;
+    background: var(--white);
+    overflow: hidden;
+}
+
+.more-to-read .section-heading {
+    position: absolute;
+    left: 120px;
+    top: 34px;
+}
+
+.more-to-read .section-heading p {
+    margin-top: 14px;
+}
+
+.more-list {
+    position: absolute;
+    left: 120px;
+    top: 124px;
+    width: 1680px;
+}
+
+.more-row {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 169px;
+    padding: 0;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.more-row::after {
+    top: 146px;
+}
+
+.more-row .row-category {
+    left: 0;
+    top: 18px;
+}
+
+.more-row .row-content {
+    left: 90px;
+    top: 18px;
+    width: calc(100% - 340px);
+}
+
+.more-row .row-content strong {
+    height: 52px;
+    min-height: 52px;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.more-row .row-content > span {
+    top: 59px;
+    min-height: 48px;
+    margin: 0;
+}
+
+.more-row .row-read {
+    right: 0;
+    top: 20px;
+}
+
+
+/* =========================================================
+   CTA / JOURNAL — Figma y=3433, h=320
+========================================================= */
+
+
+.journal {
+    height: 320px;
+    margin-top: 160px;
+    background: var(--off-white);
+    overflow: hidden;
+}
+
+.journal-copy {
+    position: absolute;
+    left: 120px;
+    top: 35px;
+}
+
+.journal-copy .meta {
+    height: 20px;
+}
+
+.journal-copy h2 {
+    margin-top: 47px;
+    min-height: 70px;
+    color: var(--deep-black);
+    font-size: 30px;
+    line-height: 35px;
+    font-weight: 600;
+}
+
+.journal-copy > p:last-child {
+    margin-top: 19px;
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
+}
+
+.journal-button {
+    position: absolute;
+    left: 1510px;
+    top: 118px;
+    width: 240px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--deep-black);
+    color: var(--white);
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.journal-button:hover {
+    background: var(--blue);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    position: relative;
+
+    height: 307px;
+
+    padding: 40px 60px 60px;
+
+    background: #1d1d1d;
+
+    color: #fff;
+}
+
+.footer-brand p {
+    font-size: 16px;
+
+    color: #8c919c;
+}
+
+.footer-brand strong {
+    display: block;
+
+    font-size: 100px;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    line-height: 1.5;
+
+    font-family:
+        "MungyeongGamhongApple",
+        sans-serif;
+
+    font-weight: normal;
+}
+
+.footer-brand strong span {
+    color: var(--blue);
+}
+
+.footer-nav {
+    position: absolute;
+
+    right: 60px;
+    top: 50px;
+
+    display: flex;
+
+    gap: 70px;
+}
+
+.footer-nav div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 17px;
+
+    min-width: 110px;
+}
+
+.footer-nav b {
+    font-size: 13px;
+}
+
+.footer-nav a {
+    font-size: 12px;
+
+    color: #8c919c;
+}
+
+.footer-bottom {
+    position: absolute;
+
+    left: 60px;
+    right: 60px;
+    bottom: 37px;
+
+    border-top: 1px solid #292e36;
+
+    padding-top: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 10px;
+
+    color: #666b75;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.65s ease, transform 0.65s cubic-bezier(.22,.61,.36,1);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1.is-visible { transition-delay: 60ms; }
+.reveal-delay-2.is-visible { transition-delay: 120ms; }
+.reveal-delay-3.is-visible { transition-delay: 180ms; }
+.reveal-delay-4.is-visible { transition-delay: 240ms; }
+
+:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 4px;
+}
+
+@media (min-width: 1921px) {
+    .page {
+        width: 1920px;
+        margin: 0 auto;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   PC / TABLET / MOBILE
+========================================================= */
+
+/* ---------------------------------------------------------
+   SMALL DESKTOP
+   1101px ~ 1439px
+   2-column layout 유지 + 고정 1920px 값 해제
+--------------------------------------------------------- */
+@media (max-width: 1439px) and (min-width: 1101px) {
+
+    .header {
+        padding: 0 40px;
+    }
+
+    .header nav {
+        gap: 32px;
+        font-size: 15px;
+    }
+
+    /*
+       HERO는 폭이 줄어들기 시작하면 FEATURE STORY와 같은 흐름으로 전환:
+       이미지가 먼저 전체 폭을 차지하고, 오른쪽 텍스트는 이미지 아래로 내려감.
+    */
+    .hero {
+        height: auto;
+        min-height: 0;
+        padding: 110px 5vw 80px;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 0;
+        align-items: start;
+        overflow: visible;
+    }
+
+    .hero-image-link {
+        display: block;
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1120 / 690;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .hero-overlay {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: min(620px, calc(100% - 48px));
+        height: 92px;
+        margin: 0 0 34px 24px;
+        padding: 18px;
+        z-index: 2;
+        grid-column: 1;
+        grid-row: 1;
+        align-self: end;
+        justify-self: start;
+        display: flex;
+    }
+
+    .hero-overlay strong {
+        font-size: 20px;
+        line-height: 1.35;
+        white-space: nowrap;
+    }
+
+    .hero-side {
+        position: relative;
+        left: auto;
+        top: auto;
+        right: auto;
+        width: 100%;
+        margin-top: 42px;
+        grid-column: 1;
+        grid-row: 2;
+        padding-top: 0;
+    }
+
+    .hero-side h1,
+    .hero-body,
+    .topic-copy {
+        width: 100%;
+    }
+
+    .hero-side h1 {
+        min-height: 0;
+        font-size: 32px;
+        line-height: 1.3;
+        word-break: keep-all;
+    }
+
+    .hero-body {
+        min-height: 0;
+        font-size: 17px;
+        line-height: 1.7;
+        word-break: keep-all;
+    }
+
+    .topic-copy {
+        min-height: 0;
+        font-size: 15px;
+        line-height: 1.7;
+        word-break: keep-all;
+    }
+
+    .hero-side .text-link {
+        margin-top: 52px;
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .editors-pick,
+    .more-to-read {
+        height: auto;
+        padding: 40px 5vw 70px;
+        overflow: visible;
+    }
+
+    .editors-pick .section-heading,
+    .more-to-read .section-heading {
+        position: relative;
+        left: auto;
+        top: auto;
+    }
+
+    .pick-list,
+    .more-list {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        margin-top: 54px;
+    }
+
+    .pick-row,
+    .more-row {
+        height: auto;
+        min-height: 156px;
+        padding: 18px 0 28px;
+        overflow: visible;
+    }
+
+    .pick-row::after,
+    .more-row::after {
+        top: auto;
+        bottom: 0;
+    }
+
+    .row-number,
+    .row-category {
+        position: relative;
+        left: auto;
+        top: auto;
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    .row-content,
+    .more-row .row-content {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+    }
+
+    .row-content strong,
+    .more-row .row-content strong {
+        height: auto;
+        min-height: 0;
+        font-size: 22px;
+        line-height: 1.35;
+    }
+
+    .row-content > span,
+    .more-row .row-content > span {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        min-height: 0;
+        margin-top: 12px;
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .row-read,
+    .more-row .row-read {
+        position: absolute;
+        right: 0;
+        top: 18px;
+    }
+
+    .feature-story {
+        height: auto;
+        margin-top: 70px;
+        padding: 40px 5vw 80px;
+        overflow: visible;
+    }
+
+    .feature-story .section-heading {
+        position: relative;
+        left: auto;
+        top: auto;
+    }
+
+    .feature-image-link {
+        display: block;
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1050 / 650;
+        margin-top: 54px;
+    }
+
+    .feature-overlay {
+        position: absolute;
+        left: 24px;
+        top: auto;
+        right: auto;
+        bottom: 34px;
+        width: min(620px, calc(100% - 48px));
+        height: 92px;
+        min-height: 92px;
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        z-index: 2;
+    }
+
+    .feature-overlay strong {
+        white-space: nowrap;
+    }
+
+    .feature-side {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        margin-top: 42px;
+    }
+
+    .feature-side h3,
+    .feature-body {
+        width: 100%;
+    }
+
+    .feature-side h3 {
+        font-size: 32px;
+        line-height: 1.3;
+    }
+
+    .feature-body {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .feature-list {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .feature-side .text-link {
+        font-size: 15px;
+        line-height: 20px;
+        height: 30px;
+    }
+
+    .feature-footnote {
+        font-size: 15px;
+        line-height: 1.55;
+    }
+
+    .journal {
+        height: auto;
+        min-height: 300px;
+        margin-top: 100px;
+        padding: 50px 5vw;
+    }
+
+    .journal-copy {
+        position: relative;
+        left: auto;
+        top: auto;
+        max-width: 700px;
+    }
+
+    .journal-button {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin-top: 40px;
+        width: 220px;
+    }
+
+    .footer {
+        height: auto;
+        min-height: 400px;
+        padding: 50px 5vw;
+    }
+
+    .footer-brand strong {
+        font-size: 80px;
+    }
+
+    .footer-nav {
+        position: static;
+        margin-top: 34px;
+        gap: 36px;
+    }
+
+    .footer-bottom {
+        position: static;
+        width: 100%;
+        margin-top: 50px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+   769px ~ 1100px
+   이미지 + 텍스트 2열 / 리스트는 1열 정돈
+--------------------------------------------------------- */
+@media (max-width: 1100px) and (min-width: 769px) {
+
+    .header {
+        height: 68px;
+        padding: 0 28px;
+    }
+
+    .header nav {
+        display: none;
+    }
+
+    .header-download {
+        width: 142px;
+        height: 42px;
+        font-size: 14px;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 0;
+        padding: 96px 32px 72px;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 0;
+        align-items: start;
+        overflow: visible;
+    }
+
+    .hero-image-link {
+        display: block;
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1120 / 690;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .hero-overlay {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: min(620px, calc(100% - 32px));
+        height: 82px;
+        margin: 0 0 24px 16px;
+        padding: 15px;
+        grid-column: 1;
+        grid-row: 1;
+        align-self: end;
+        justify-self: start;
+        z-index: 2;
+        display: flex;
+    }
+
+    .hero-overlay strong {
+        font-size: 18px;
+        line-height: 1.4;
+        white-space: nowrap;
+    }
+
+    .hero-side {
+        position: relative;
+        left: auto;
+        top: auto;
+        right: auto;
+        width: 100%;
+        margin-top: 40px;
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .hero-side h1 {
+        width: 100%;
+        font-size: 29px;
+        line-height: 1.35;
+    }
+
+    .hero-body {
+        width: 100%;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .topic-copy {
+        width: 100%;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .hero-side .text-link {
+        margin-top: 44px;
+        font-size: 14px;
+    }
+
+    .editors-pick,
+    .more-to-read {
+        height: auto;
+        padding: 38px 32px 66px;
+        overflow: visible;
+    }
+
+    .editors-pick .section-heading,
+    .more-to-read .section-heading,
+    .feature-story .section-heading {
+        position: relative;
+        left: auto;
+        top: auto;
+    }
+
+    .pick-list,
+    .more-list {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        margin-top: 46px;
+    }
+
+    .pick-row,
+    .more-row {
+        min-height: 148px;
+        height: auto;
+        padding: 18px 0 26px;
+        overflow: visible;
+    }
+
+    .pick-row::after,
+    .more-row::after {
+        top: auto;
+        bottom: 0;
+    }
+
+    .row-number,
+    .row-category {
+        position: relative;
+        left: auto;
+        top: auto;
+        display: block;
+        margin-bottom: 10px;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .more-row .row-category {
+        margin-bottom: 26px;
+    }
+
+    .row-content,
+    .more-row .row-content {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: calc(100% - 80px);
+    }
+
+    .row-content strong,
+    .more-row .row-content strong {
+        height: auto;
+        min-height: 0;
+        font-size: 21px;
+        line-height: 1.35;
+    }
+
+    .row-content > span,
+    .more-row .row-content > span {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        min-height: 0;
+        margin-top: 10px;
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .row-read,
+    .more-row .row-read {
+        position: absolute;
+        right: 0;
+        top: 20px;
+        font-size: 11px;
+    }
+
+    .feature-story {
+        height: auto;
+        margin-top: 56px;
+        padding: 38px 32px 70px;
+        overflow: visible;
+    }
+
+    .feature-image-link {
+        display: block;
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1050 / 650;
+        margin-top: 46px;
+    }
+
+    .feature-overlay {
+        position: absolute;
+        left: 18px;
+        top: auto;
+        right: auto;
+        bottom: 20px;
+        width: min(620px, calc(100% - 36px));
+        height: 82px;
+        min-height: 82px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        z-index: 2;
+    }
+
+    .feature-overlay strong {
+        font-size: 18px;
+        line-height: 1.4;
+        white-space: nowrap;
+    }
+
+    .feature-side {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        margin-top: 34px;
+    }
+
+    .feature-side h3,
+    .feature-body {
+        width: 100%;
+    }
+
+    .feature-side h3 {
+        font-size: 30px;
+        line-height: 1.35;
+    }
+
+    .feature-body {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .feature-side .thin-line {
+        margin-top: 34px;
+    }
+
+    .feature-list {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .feature-side .text-link {
+        margin-top: 42px;
+        font-size: 15px;
+        line-height: 20px;
+        height: 30px;
+    }
+
+    .feature-footnote {
+        margin-top: 34px;
+        font-size: 15px;
+        line-height: 1.55;
+    }
+
+    .journal {
+        height: auto;
+        min-height: 300px;
+        margin-top: 80px;
+        padding: 46px 32px;
+    }
+
+    .journal-copy {
+        position: relative;
+        left: auto;
+        top: auto;
+    }
+
+    .journal-copy h2 {
+        margin-top: 32px;
+        font-size: 27px;
+        line-height: 1.35;
+    }
+
+    .journal-copy > p:last-child {
+        margin-top: 18px;
+        font-size: 16px;
+        line-height: 1.55;
+        max-width: 680px;
+    }
+
+    .journal-button {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 220px;
+        height: 52px;
+        margin-top: 34px;
+        font-size: 13px;
+    }
+
+    .footer {
+        min-height: 420px;
+        height: auto;
+        padding: 46px 32px;
+    }
+
+    .footer-brand strong {
+        font-size: 74px;
+    }
+
+    .footer-nav {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+        margin-top: 34px;
+    }
+
+    .footer-nav div {
+        min-width: 0;
+        gap: 13px;
+    }
+
+    .footer-bottom {
+        position: static;
+        width: 100%;
+        margin-top: 44px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   320px ~ 768px
+   이미지 1열 / 텍스트 1열 / 터치 영역 확대
+--------------------------------------------------------- */
+@media (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    .header {
+        position: fixed;
+        height: 64px;
+        padding: 0 18px;
+    }
+
+    .header nav {
+        display: none;
+    }
+
+    .header-download {
+        width: 116px;
+        height: 36px;
+        border-radius: 18px;
+        font-size: 13px;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 0;
+        padding: 84px 18px 54px;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 0;
+        overflow: visible;
+    }
+
+    .hero-image-link {
+        display: block;
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1120 / 690;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .hero-overlay {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: calc(100% - 28px);
+        height: auto;
+        min-height: 78px;
+        margin: 0 0 30px 14px;
+        padding: 14px;
+        grid-column: 1;
+        grid-row: 1;
+        align-self: end;
+        z-index: 2;
+    }
+
+    .hero-overlay .eyebrow {
+        font-size: 10px;
+        line-height: 1.35;
+    }
+
+    .hero-overlay strong {
+        margin-top: 4px;
+        font-size: 16px;
+        line-height: 1.35;
+        white-space: normal;
+    }
+
+    .hero-side {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        margin-top: 0;
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .hero-side h1 {
+        width: 100%;
+        min-height: 0;
+        margin-top: 12px;
+        font-size: 28px;
+        line-height: 1.35;
+        word-break: keep-all;
+    }
+
+    .hero-body {
+        width: 100%;
+        min-height: 0;
+        margin-top: 20px;
+        font-size: 16px;
+        line-height: 1.7;
+        word-break: keep-all;
+    }
+
+    .hero-side .thin-line {
+        margin-top: 26px;
+    }
+
+    .small-title {
+        margin-top: 20px;
+        font-size: 13px;
+    }
+
+    .topic-copy {
+        width: 100%;
+        min-height: 0;
+        margin-top: 12px;
+        font-size: 15px;
+        line-height: 1.65;
+        word-break: keep-all;
+    }
+
+    .hero-side .text-link {
+        min-height: 40px;
+        height: 40px;
+        margin-top: 32px;
+        padding: 8px 4px;
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .section-heading h2 {
+        height: auto;
+        font-size: 22px;
+        line-height: 1.3;
+    }
+
+    .section-heading p {
+        min-height: 0;
+        margin-top: 10px;
+        font-size: 15px;
+        line-height: 1.55;
+        word-break: keep-all;
+    }
+
+    .editors-pick,
+    .more-to-read {
+        height: auto;
+        padding: 38px 18px 58px;
+        overflow: visible;
+    }
+
+    .editors-pick .section-heading,
+    .more-to-read .section-heading,
+    .feature-story .section-heading {
+        position: relative;
+        left: auto;
+        top: auto;
+    }
+
+    .editors-pick .section-heading p,
+    .more-to-read .section-heading p,
+    .feature-story .section-heading p {
+        margin-top: 10px;
+    }
+
+    .pick-list,
+    .more-list {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        margin-top: 34px;
+    }
+
+    .pick-row,
+    .more-row {
+        height: auto;
+        min-height: 0;
+        padding: 17px 0 24px;
+        overflow: visible;
+    }
+
+    .pick-row::after,
+    .more-row::after {
+        top: auto;
+        bottom: 0;
+    }
+
+    .row-number,
+    .row-category {
+        position: relative;
+        left: auto;
+        top: auto;
+        display: block;
+        margin-bottom: 9px;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .more-row .row-category {
+        margin-bottom: 24px;
+    }
+
+    .row-content,
+    .more-row .row-content {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: calc(100% - 44px);
+    }
+
+    .row-content strong,
+    .more-row .row-content strong {
+        height: auto;
+        min-height: 0;
+        font-size: 20px;
+        line-height: 1.4;
+        word-break: keep-all;
+    }
+
+    .row-content > span,
+    .more-row .row-content > span {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        min-height: 0;
+        margin-top: 9px;
+        font-size: 15px;
+        line-height: 1.6;
+        word-break: keep-all;
+    }
+
+    .row-read,
+    .more-row .row-read {
+        position: absolute;
+        right: 0;
+        top: 17px;
+        font-size: 11px;
+    }
+
+    .feature-story {
+        height: auto;
+        margin-top: 42px;
+        padding: 38px 18px 64px;
+        overflow: visible;
+    }
+
+    .feature-image-link {
+        display: block;
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1050 / 650;
+        margin-top: 34px;
+        overflow: hidden;
+    }
+
+    .feature-label {
+        left: 12px;
+        top: 12px;
+        font-size: 10px;
+    }
+
+    .feature-overlay {
+        position: absolute;
+        left: 12px;
+        right: auto;
+        bottom: 12px;
+        top: auto;
+        width: calc(100% - 24px);
+        height: auto;
+        min-height: 78px;
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        z-index: 2;
+    }
+
+    .feature-overlay .eyebrow {
+        font-size: 10px;
+        line-height: 1.35;
+    }
+
+    .feature-overlay strong {
+        margin-top: 4px;
+        font-size: 16px;
+        line-height: 1.35;
+    }
+
+    .feature-side {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .feature-side h3 {
+        width: 100%;
+        min-height: 0;
+        margin-top: 12px;
+        font-size: 28px;
+        line-height: 1.35;
+        word-break: keep-all;
+    }
+
+    .feature-body {
+        width: 100%;
+        min-height: 0;
+        margin-top: 20px;
+        font-size: 16px;
+        line-height: 1.7;
+        word-break: keep-all;
+    }
+
+    .feature-side .thin-line {
+        margin-top: 30px;
+    }
+
+    .feature-list {
+        min-height: 0;
+        margin-top: 20px;
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .feature-side .text-link {
+        height: 40px;
+        margin-top: 28px;
+        padding: 8px 4px;
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .feature-footnote {
+        margin-top: 30px;
+        font-size: 15px;
+        line-height: 1.55;
+        word-break: keep-all;
+    }
+
+    .journal {
+        height: auto;
+        min-height: 0;
+        margin-top: 72px;
+        padding: 42px 18px;
+        overflow: visible;
+    }
+
+    .journal-copy {
+        position: relative;
+        left: auto;
+        top: auto;
+    }
+
+    .journal-copy .meta {
+        height: auto;
+    }
+
+    .journal-copy h2 {
+        margin-top: 26px;
+        min-height: 0;
+        font-size: 26px;
+        line-height: 1.4;
+    }
+
+    .journal-copy > p:last-child {
+        margin-top: 16px;
+        font-size: 16px;
+        line-height: 1.6;
+        word-break: keep-all;
+    }
+
+    .journal-button {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: 52px;
+        margin-top: 30px;
+        font-size: 13px;
+    }
+
+    .footer {
+        height: auto;
+        min-height: 0;
+        padding: 42px 18px 32px;
+    }
+
+    .footer-brand p {
+        font-size: 14px;
+    }
+
+    .footer-brand strong {
+        font-size: 56px;
+        line-height: 1.3;
+    }
+
+    .footer-nav {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 22px;
+        margin-top: 32px;
+    }
+
+    .footer-nav div {
+        min-width: 0;
+        gap: 12px;
+    }
+
+    .footer-nav b {
+        font-size: 12px;
+    }
+
+    .footer-nav a {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .footer-bottom {
+        position: static;
+        width: 100%;
+        margin-top: 34px;
+        padding-top: 16px;
+        gap: 10px;
+        align-items: flex-start;
+        flex-direction: column;
+        font-size: 9px;
+        line-height: 1.5;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   VERY SMALL MOBILE
+   320px ~ 480px
+   긴 제목/문장 줄바꿈 안정화
+--------------------------------------------------------- */
+@media (max-width: 480px) {
+
+    .header {
+        padding: 0 14px;
+    }
+
+    .header-download {
+        width: 104px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding-left: 14px;
+        padding-right: 14px;
+        padding-top: 82px;
+    }
+
+    .hero-side h1,
+    .feature-side h3 {
+        font-size: 25px;
+    }
+
+    .hero-body,
+    .feature-body,
+    .journal-copy > p:last-child {
+        font-size: 15px;
+    }
+
+    .topic-copy,
+    .feature-list,
+    .feature-footnote {
+        font-size: 14px;
+    }
+
+    .row-content,
+    .more-row .row-content {
+        width: calc(100% - 34px);
+    }
+
+    .row-content strong,
+    .more-row .row-content strong {
+        font-size: 18px;
+    }
+
+    .row-content > span,
+    .more-row .row-content > span {
+        font-size: 14px;
+    }
+
+    .journal-copy h2 {
+        font-size: 23px;
+    }
+
+    .footer-brand strong {
+        font-size: 48px;
+    }
+}
