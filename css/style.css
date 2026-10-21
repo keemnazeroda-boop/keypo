@@ -3115,13 +3115,74 @@ a {
 
 
     /* DOWNLOAD */
+/* DOWNLOAD 섹션 */
+.download {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+}
 
-    .download {
-        height: 620px;
 
-        background-size: auto 620px;
-    }
+/* 영상 위치 및 정렬 */
+.download-video {
+    position: absolute;
+    inset: 0;
 
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    z-index: 0;
+}
+
+.download video {
+    display: block;
+    width: 100%;
+}
+
+
+/* 실제 영상 크기 */
+#download .download-video video {
+    display: block;
+
+    width: 50% !important;
+    height: auto !important;
+
+    max-width: 800px !important;
+    max-height: 80% !important;
+
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/* 위 섹션과 연결되는 그라데이션 */
+#download::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 240px;
+
+    background: linear-gradient(
+        to bottom,
+        #e2f0fd 0%,
+        rgba(226, 240, 253, 0.75) 30%,
+        rgba(226, 240, 253, 0.3) 65%,
+        rgba(226, 240, 253, 0) 100%
+    );
+
+    z-index: 1;
+    pointer-events: none;
+}
     .download-buttons {
         left: 20px;
         right: 20px;
@@ -3144,5 +3205,467 @@ a {
     .footer-nav {
         gap:
             30px 15px;
+    }
+}
+
+/* =========================================================
+   KEYPO APP EXPERIENCE — iPhone 13 + 정렬 개선
+   - 기능 항목은 원래의 가로 구분선 스타일로 복원
+   - 핸드폰은 제목부터 04번 기능까지의 콘텐츠 블록과 세로 중앙 정렬
+   - 데스크톱은 좌우 2열, 태블릿/모바일은 아래로 배치
+========================================================= */
+
+section.app#service {
+    display: grid !important;
+    grid-template-columns: minmax(0, 620px) minmax(250px, 320px);
+    justify-content: center;
+    align-items: center !important;
+    column-gap: clamp(54px, 5.5vw, 100px);
+    row-gap: 42px;
+    width: 100%;
+    height: auto;
+    min-height: 872px;
+    padding: clamp(90px, 7vw, 118px) max(28px, calc((100vw - 1320px) / 2));
+    box-sizing: border-box;
+    position: relative;
+    background: #fff;
+}
+
+/* 왼쪽 텍스트 영역: 위쪽 padding으로 내용이 밀리지 않도록 초기화 */
+section.app#service > .app-info {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: stretch;
+    align-self: center;
+    width: 100%;
+    max-width: 620px;
+    min-width: 0;
+    min-height: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    z-index: 1;
+}
+
+section.app#service > .app-info > h2 {
+    margin: 0;
+}
+
+section.app#service > .app-info > p {
+    margin: 18px 0 0;
+}
+
+/* 기능 리스트 */
+section.app#service .app-features {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    width: 100%;
+    margin: clamp(38px, 4vw, 54px) 0 0;
+    padding: 0;
+}
+
+/* 기존 디자인처럼 얇은 가로 구분선만 사용 — 카드형 테두리/배경 제거 */
+section.app#service .app-features > .feature {
+    appearance: none;
+    -webkit-appearance: none;
+    display: grid;
+    grid-template-columns: 55px minmax(0, 1fr);
+    align-items: start;
+    gap: 0;
+    width: 100%;
+    min-width: 0;
+    min-height: 122px;
+    margin: 0;
+    padding: 16px 0 18px;
+    box-sizing: border-box;
+    border: 0;
+    border-top: 1px solid #e5e7eb;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transform: none;
+    transition: color 180ms ease;
+}
+
+section.app#service .app-features > .feature:last-child {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+section.app#service .app-features > .feature > span:first-child {
+    display: block;
+    width: auto;
+    padding-top: 3px;
+    color: #737983;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    transition: color 180ms ease;
+}
+
+section.app#service .app-features > .feature h3 {
+    margin: 0;
+    color: #737983;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.04em;
+    transition: color 180ms ease;
+}
+
+section.app#service .app-features > .feature p {
+    margin: 5px 0 0;
+    color: #737983;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.025em;
+    transition: color 180ms ease;
+}
+
+/* Hover/선택 시 텍스트만 강조. 카드 배경과 사각 테두리는 만들지 않음. */
+section.app#service .app-features > .feature:hover > span:first-child,
+section.app#service .app-features > .feature.is-active > span:first-child {
+    color: #3471f8;
+}
+
+section.app#service .app-features > .feature:hover h3,
+section.app#service .app-features > .feature:hover p,
+section.app#service .app-features > .feature.is-active h3,
+section.app#service .app-features > .feature.is-active p {
+    color: #1d1d1d;
+}
+
+section.app#service .app-features > .feature:focus-visible {
+    outline: 2px solid #3471f8;
+    outline-offset: 4px;
+}
+
+/* iPhone 13 본체: text block과 같은 row 안에서 세로 중앙 정렬 */
+section.app#service > .app-phone {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
+    display: block;
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    flex: none;
+    margin: 0 !important;
+    width: clamp(250px, 22vw, 320px);
+    max-width: 100%;
+    aspect-ratio: 390 / 844;
+    padding: 7px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 47px;
+    background: linear-gradient(135deg, #777b82 0%, #292c31 9%, #090a0c 28%, #202329 70%, #656970 94%, #25272b 100%);
+    box-shadow:
+        0 30px 65px rgba(20, 34, 60, 0.20),
+        0 8px 18px rgba(20, 25, 35, 0.13),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.13);
+    z-index: 1;
+    isolation: isolate;
+}
+
+section.app#service .phone-screen {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid #050506;
+    border-radius: 39px;
+    background: #fff;
+    isolation: isolate;
+}
+
+section.app#service .phone-screen video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: inherit;
+    background: #fff;
+}
+
+/* iPhone 13 has a wide top notch (not Dynamic Island) */
+section.app#service .iphone-notch {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 50%;
+    width: 36%;
+    height: 25px;
+    transform: translateX(-50%);
+    border-radius: 0 0 15px 15px;
+    background: #050506;
+    pointer-events: none;
+}
+
+section.app#service .iphone-notch-speaker {
+    position: absolute;
+    top: 9px;
+    left: 26%;
+    width: 43%;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(#17181b, #24262b);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+section.app#service .iphone-notch-camera {
+    position: absolute;
+    top: 7px;
+    right: 15%;
+    width: 7px;
+    height: 7px;
+    border: 1px solid #202a3a;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #53677c 0%, #15202e 38%, #030405 75%);
+    box-shadow: 0 0 0 1px #0d0e10;
+}
+
+section.app#service .iphone-switch,
+section.app#service .iphone-volume-up,
+section.app#service .iphone-volume-down,
+section.app#service .iphone-power {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 3px;
+    border-radius: 3px;
+    pointer-events: none;
+}
+
+section.app#service .iphone-switch {
+    left: -3px;
+    top: 83px;
+    height: 17px;
+    background: linear-gradient(90deg, #74777d, #24262a);
+}
+
+section.app#service .iphone-volume-up {
+    left: -3px;
+    top: 119px;
+    height: 37px;
+    background: linear-gradient(90deg, #777a80, #222428);
+}
+
+section.app#service .iphone-volume-down {
+    left: -3px;
+    top: 166px;
+    height: 37px;
+    background: linear-gradient(90deg, #777a80, #222428);
+}
+
+section.app#service .iphone-power {
+    right: -3px;
+    top: 135px;
+    height: 62px;
+    background: linear-gradient(90deg, #25272b, #777a80);
+}
+
+/* Tablet and mobile: text first, phone directly below */
+@media (max-width: 1020px) {
+    section.app#service {
+        grid-template-columns: minmax(0, 1fr);
+        justify-content: stretch;
+        align-items: start !important;
+        row-gap: 44px;
+        padding: 88px 32px 96px;
+        min-height: 0;
+    }
+
+    section.app#service > .app-info {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: center;
+        align-self: auto;
+        width: 100%;
+        max-width: 700px;
+    }
+
+    section.app#service .app-features {
+        margin-top: 40px;
+    }
+
+    section.app#service > .app-phone {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: center;
+        align-self: auto;
+        width: min(72vw, 290px);
+    }
+}
+
+@media (max-width: 520px) {
+    section.app#service {
+        padding: 72px 20px 80px;
+        row-gap: 34px;
+    }
+
+    section.app#service .app-features {
+        margin-top: 34px;
+    }
+
+    section.app#service .app-features > .feature {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 0;
+        min-height: 108px;
+        padding: 14px 0 17px;
+    }
+
+    section.app#service .app-features > .feature h3 {
+        font-size: 20px;
+    }
+
+    section.app#service .app-features > .feature p {
+        font-size: 13px;
+    }
+
+    section.app#service > .app-phone {
+        width: min(74vw, 270px);
+        border-radius: 40px;
+    }
+
+    section.app#service .phone-screen {
+        border-radius: 33px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    section.app#service .app-features > .feature {
+        transition: none;
+    }
+}
+
+
+/* APP FEATURE INITIAL STATE FIX
+   클릭 전에는 마우스가 올라가 있어도 기본 회색으로 표시합니다.
+   클릭한 항목만 is-active 상태로 강조되고, 기존 가로 구분선 디자인을 유지합니다. */
+section.app#service .app-features > .feature:not(.is-active),
+section.app#service .app-features > .feature:not(.is-active):hover {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+section.app#service .app-features > .feature:not(.is-active) > span:first-child,
+section.app#service .app-features > .feature:not(.is-active):hover > span:first-child,
+section.app#service .app-features > .feature:not(.is-active) h3,
+section.app#service .app-features > .feature:not(.is-active):hover h3,
+section.app#service .app-features > .feature:not(.is-active) p,
+section.app#service .app-features > .feature:not(.is-active):hover p {
+    /* hover 상태도 클릭 전이면 다른 항목과 동일한 회색으로 유지 */
+    color: #737983 !important;
+}
+
+/* 실제 클릭으로 선택된 기능만 강조 */
+section.app#service .app-features > .feature.is-active > span:first-child {
+    color: #3471f8 !important;
+}
+section.app#service .app-features > .feature.is-active h3,
+section.app#service .app-features > .feature.is-active p {
+    color: #1d1d1d !important;
+}
+
+
+/* KEYPO APP VIDEO — Notification scene offset only
+   The notification screen sits slightly lower inside the phone mockup.
+   The small scale prevents an exposed edge when the video is shifted. */
+section.app#service .phone-screen video {
+    transform-origin: center center;
+    transition: transform 160ms ease-out;
+    will-change: transform;
+}
+
+section.app#service .phone-screen video.is-alert-scene {
+    transform: translateY(6px) scale(1.02);
+}
+
+
+
+/* =========================================================
+   APP INFO / FEATURES SCROLL REVEAL
+========================================================= */
+
+/* app-info의 텍스트와 각 요소 */
+.app-info > .app-info-reveal-item {
+    opacity: 0;
+    translate: 0 26px;
+
+    transition:
+        opacity 0.7s ease,
+        translate 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+    transition-delay: var(--app-reveal-delay, 0ms);
+    will-change: opacity, translate;
+}
+
+.app-info > .app-info-reveal-item.is-scroll-visible {
+    opacity: 1;
+    translate: 0 0;
+}
+
+
+/* app-features의 기능별 제목과 설명 */
+.app-features .app-feature-reveal h3,
+.app-features .app-feature-reveal p {
+    opacity: 0;
+    translate: 0 26px;
+
+    transition:
+        opacity 0.7s ease,
+        translate 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+    transition-delay: var(--app-reveal-delay, 0ms);
+    will-change: opacity, translate;
+}
+
+/* 해당 기능이 나타날 때 제목과 설명을 함께 표시 */
+.app-features .app-feature-reveal.is-scroll-visible h3,
+.app-features .app-feature-reveal.is-scroll-visible p {
+    opacity: 1;
+    translate: 0 0;
+}
+
+
+/* 핸드폰 목업과 영상 */
+.app-phone-reveal {
+    opacity: 0;
+    translate: 0 26px;
+
+    transition:
+        opacity 0.7s ease,
+        translate 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+    transition-delay: 0ms;
+    will-change: opacity, translate;
+}
+
+.app-phone-reveal.is-scroll-visible {
+    opacity: 1;
+    translate: 0 0;
+}
+
+
+/* 움직임 최소화 설정을 사용하는 환경 */
+@media (prefers-reduced-motion: reduce) {
+    .app-info > .app-info-reveal-item,
+    .app-features .app-feature-reveal h3,
+    .app-features .app-feature-reveal p,
+    .app-phone-reveal {
+        transition-duration: 0.01ms;
+        transition-delay: 0ms;
+        translate: 0 0;
     }
 }
