@@ -27,7 +27,7 @@
 
         <nav>
             <a href="#service">서비스</a>
-            <a href="keypo_pick.html">KEYPO PICK</a>
+            <a href="#pick">KEYPO PICK</a>
             <a href="#company">회사소개</a>
             <a href="#mate">크루원 모집</a>
         </nav>
@@ -90,48 +90,38 @@
 
             <div class="app-features">
 
-                <!-- 01 -->
-                <div class="feature">
+                <!-- 기능별 영상 구간은 data-video-start / data-video-end로 초 단위 지정합니다. -->
+                <button type="button" class="feature" data-video-start="2.25" data-video-end="5.82" aria-pressed="false">
                     <span>01</span>
-
                     <div>
                         <h3>내 아이템</h3>
                         <p>등록한 제품과 구매 정보를 한 곳에서.</p>
                     </div>
-                </div>
+                </button>
 
-
-                <!-- 02 -->
-                <div class="feature">
+                <button type="button" class="feature" data-video-start="6.65" data-video-end="9.65" aria-pressed="false">
                     <span>02</span>
-
                     <div>
                         <h3>스마트 알림</h3>
                         <p>필요한 순간을 놓치지 않도록.</p>
                     </div>
-                </div>
+                </button>
 
-
-                <!-- 03 -->
-                <div class="feature">
+                <button type="button" class="feature" data-video-start="10.4" data-video-end="16.15" aria-pressed="false">
                     <span>03</span>
-
                     <div>
                         <h3>반품·교환·A/S</h3>
                         <p>귀찮은 절차는 더 간단하게.</p>
                     </div>
-                </div>
+                </button>
 
-
-                <!-- 04 -->
-                <div class="feature">
+                <button type="button" class="feature" data-video-start="16.9" data-video-end="24.85" aria-pressed="false">
                     <span>04</span>
-
                     <div>
                         <h3>스마트 렌즈</h3>
                         <p>영수증과 제품 정보를 빠르게.</p>
                     </div>
-                </div>
+                </button>
 
             </div>
 
@@ -139,12 +129,21 @@
 
 
         <!-- PHONE -->
-        <div class="app-phone">
+        <div class="app-phone" aria-label="iPhone 13 목업 안의 KEYPO 앱 미리보기">
+            <span class="iphone-switch" aria-hidden="true"></span>
+            <span class="iphone-volume-up" aria-hidden="true"></span>
+            <span class="iphone-volume-down" aria-hidden="true"></span>
+            <span class="iphone-power" aria-hidden="true"></span>
 
             <div class="phone-screen">
-                <!-- 나중에 앱 영상 삽입 -->
+                <video id="keypo-app-video" autoplay muted playsinline preload="metadata" aria-label="KEYPO 앱 화면 영상">
+                    <source src="./video/KEYPO_UI_Motion.mp4" type="video/mp4">
+                </video>
+                <div class="iphone-notch" aria-hidden="true">
+                    <span class="iphone-notch-speaker"></span>
+                    <span class="iphone-notch-camera"></span>
+                </div>
             </div>
-
         </div>
 
     </section>
@@ -224,8 +223,8 @@
             <div class="pick-cover"></div>
 
             <p class="pick-quote">
-               매일 쓰는 것들이, <br>
-               결국 취향이 된다.
+                매일 쓰는 것들이, <br>
+                결국 취향이 된다.
             </p>
 
 
@@ -389,14 +388,15 @@
 
     </section>
 
-
-
-    <section class="download">
+    <section class="download" id="download">
+        <div class="download-video">
+            <video autoplay muted loop playsinline src="./video/footer.mp4"></video>
+        </div>
     </section>
-
 
     <!-- FOOTER -->
     <footer class="footer">
+        <!-- 푸터 배경 영상 -->
 
         <div class="footer-brand">
             <p>구매 이후를 한 곳에서, 더 쉽게 관리하세요.</p>
@@ -455,10 +455,8 @@
     <!-- jQuery 오픈소스 연결 -->
     <script src="js/jquery-4.0.0.min.js"></script>
 
-    <!-- jQuery 파일 연결 -->
+    <!-- 기존 사이트 스크립트 -->
     <script src="js/script.js"></script>
-
-    </div>
 </body>
 
 </html>
