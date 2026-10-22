@@ -3115,74 +3115,73 @@ a {
 
 
     /* DOWNLOAD */
-/* DOWNLOAD 섹션 */
-.download {
-    position: relative;
-    width: 100%;
-    height: 700px;
-    overflow: hidden;
-}
+    /* DOWNLOAD 섹션 */
+    .download {
+        position: relative;
+        width: 100%;
+        height: 700px;
+        overflow: hidden;
+    }
 
 
-/* 영상 위치 및 정렬 */
-.download-video {
-    position: absolute;
-    inset: 0;
+    /* 영상 위치 및 정렬 */
+    .download-video {
+        position: absolute;
+        inset: 0;
 
-    width: 100%;
-    height: 100%;
+        width: 100%;
+        height: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    overflow: hidden;
-    z-index: 0;
-}
+        overflow: hidden;
+        z-index: 0;
+    }
 
-.download video {
-    display: block;
-    width: 100%;
-}
-
-
-/* 실제 영상 크기 */
-#download .download-video video {
-    display: block;
-
-    width: 50% !important;
-    height: auto !important;
-
-    max-width: 800px !important;
-    max-height: 80% !important;
-
-    object-fit: contain;
-    object-position: center;
-}
+    .download video {
+        display: block;
+        width: 100%;
+    }
 
 
-/* 위 섹션과 연결되는 그라데이션 */
-#download::before {
-    content: "";
-    position: absolute;
+    /* 실제 영상 크기 */
+    #download .download-video video {
+        display: block;
 
-    top: 0;
-    left: 0;
+        width: 50% !important;
+        height: auto !important;
 
-    width: 100%;
-    height: 240px;
+        max-width: 800px !important;
+        max-height: 80% !important;
 
-    background: linear-gradient(
-        to bottom,
-        #e2f0fd 0%,
-        rgba(226, 240, 253, 0.75) 30%,
-        rgba(226, 240, 253, 0.3) 65%,
-        rgba(226, 240, 253, 0) 100%
-    );
+        object-fit: contain;
+        object-position: center;
+    }
 
-    z-index: 1;
-    pointer-events: none;
-}
+
+    /* 위 섹션과 연결되는 그라데이션 */
+    #download::before {
+        content: "";
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 240px;
+
+        background: linear-gradient(to bottom,
+                #e2f0fd 0%,
+                rgba(226, 240, 253, 0.75) 30%,
+                rgba(226, 240, 253, 0.3) 65%,
+                rgba(226, 240, 253, 0) 100%);
+
+        z-index: 1;
+        pointer-events: none;
+    }
+
     .download-buttons {
         left: 20px;
         right: 20px;
@@ -3232,7 +3231,7 @@ section.app#service {
 }
 
 /* 왼쪽 텍스트 영역: 위쪽 padding으로 내용이 밀리지 않도록 초기화 */
-section.app#service > .app-info {
+section.app#service>.app-info {
     grid-column: 1;
     grid-row: 1;
     justify-self: stretch;
@@ -3249,11 +3248,11 @@ section.app#service > .app-info {
     z-index: 1;
 }
 
-section.app#service > .app-info > h2 {
+section.app#service>.app-info>h2 {
     margin: 0;
 }
 
-section.app#service > .app-info > p {
+section.app#service>.app-info>p {
     margin: 18px 0 0;
 }
 
@@ -3268,7 +3267,7 @@ section.app#service .app-features {
 }
 
 /* 기존 디자인처럼 얇은 가로 구분선만 사용 — 카드형 테두리/배경 제거 */
-section.app#service .app-features > .feature {
+section.app#service .app-features>.feature {
     appearance: none;
     -webkit-appearance: none;
     display: grid;
@@ -3294,11 +3293,11 @@ section.app#service .app-features > .feature {
     transition: color 180ms ease;
 }
 
-section.app#service .app-features > .feature:last-child {
+section.app#service .app-features>.feature:last-child {
     border-bottom: 1px solid #e5e7eb;
 }
 
-section.app#service .app-features > .feature > span:first-child {
+section.app#service .app-features>.feature>span:first-child {
     display: block;
     width: auto;
     padding-top: 3px;
@@ -3310,7 +3309,7 @@ section.app#service .app-features > .feature > span:first-child {
     transition: color 180ms ease;
 }
 
-section.app#service .app-features > .feature h3 {
+section.app#service .app-features>.feature h3 {
     margin: 0;
     color: #737983;
     font-size: 24px;
@@ -3320,7 +3319,7 @@ section.app#service .app-features > .feature h3 {
     transition: color 180ms ease;
 }
 
-section.app#service .app-features > .feature p {
+section.app#service .app-features>.feature p {
     margin: 5px 0 0;
     color: #737983;
     font-size: 14px;
@@ -3331,25 +3330,25 @@ section.app#service .app-features > .feature p {
 }
 
 /* Hover/선택 시 텍스트만 강조. 카드 배경과 사각 테두리는 만들지 않음. */
-section.app#service .app-features > .feature:hover > span:first-child,
-section.app#service .app-features > .feature.is-active > span:first-child {
+section.app#service .app-features>.feature:hover>span:first-child,
+section.app#service .app-features>.feature.is-active>span:first-child {
     color: #3471f8;
 }
 
-section.app#service .app-features > .feature:hover h3,
-section.app#service .app-features > .feature:hover p,
-section.app#service .app-features > .feature.is-active h3,
-section.app#service .app-features > .feature.is-active p {
+section.app#service .app-features>.feature:hover h3,
+section.app#service .app-features>.feature:hover p,
+section.app#service .app-features>.feature.is-active h3,
+section.app#service .app-features>.feature.is-active p {
     color: #1d1d1d;
 }
 
-section.app#service .app-features > .feature:focus-visible {
+section.app#service .app-features>.feature:focus-visible {
     outline: 2px solid #3471f8;
     outline-offset: 4px;
 }
 
 /* iPhone 13 본체: text block과 같은 row 안에서 세로 중앙 정렬 */
-section.app#service > .app-phone {
+section.app#service>.app-phone {
     grid-column: 2;
     grid-row: 1;
     justify-self: center;
@@ -3486,7 +3485,7 @@ section.app#service .iphone-power {
         min-height: 0;
     }
 
-    section.app#service > .app-info {
+    section.app#service>.app-info {
         grid-column: 1;
         grid-row: 1;
         justify-self: center;
@@ -3499,7 +3498,7 @@ section.app#service .iphone-power {
         margin-top: 40px;
     }
 
-    section.app#service > .app-phone {
+    section.app#service>.app-phone {
         grid-column: 1;
         grid-row: 2;
         justify-self: center;
@@ -3518,22 +3517,22 @@ section.app#service .iphone-power {
         margin-top: 34px;
     }
 
-    section.app#service .app-features > .feature {
+    section.app#service .app-features>.feature {
         grid-template-columns: 42px minmax(0, 1fr);
         gap: 0;
         min-height: 108px;
         padding: 14px 0 17px;
     }
 
-    section.app#service .app-features > .feature h3 {
+    section.app#service .app-features>.feature h3 {
         font-size: 20px;
     }
 
-    section.app#service .app-features > .feature p {
+    section.app#service .app-features>.feature p {
         font-size: 13px;
     }
 
-    section.app#service > .app-phone {
+    section.app#service>.app-phone {
         width: min(74vw, 270px);
         border-radius: 40px;
     }
@@ -3544,7 +3543,7 @@ section.app#service .iphone-power {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    section.app#service .app-features > .feature {
+    section.app#service .app-features>.feature {
         transition: none;
     }
 }
@@ -3553,28 +3552,29 @@ section.app#service .iphone-power {
 /* APP FEATURE INITIAL STATE FIX
    클릭 전에는 마우스가 올라가 있어도 기본 회색으로 표시합니다.
    클릭한 항목만 is-active 상태로 강조되고, 기존 가로 구분선 디자인을 유지합니다. */
-section.app#service .app-features > .feature:not(.is-active),
-section.app#service .app-features > .feature:not(.is-active):hover {
+section.app#service .app-features>.feature:not(.is-active),
+section.app#service .app-features>.feature:not(.is-active):hover {
     background: transparent !important;
     box-shadow: none !important;
 }
 
-section.app#service .app-features > .feature:not(.is-active) > span:first-child,
-section.app#service .app-features > .feature:not(.is-active):hover > span:first-child,
-section.app#service .app-features > .feature:not(.is-active) h3,
-section.app#service .app-features > .feature:not(.is-active):hover h3,
-section.app#service .app-features > .feature:not(.is-active) p,
-section.app#service .app-features > .feature:not(.is-active):hover p {
+section.app#service .app-features>.feature:not(.is-active)>span:first-child,
+section.app#service .app-features>.feature:not(.is-active):hover>span:first-child,
+section.app#service .app-features>.feature:not(.is-active) h3,
+section.app#service .app-features>.feature:not(.is-active):hover h3,
+section.app#service .app-features>.feature:not(.is-active) p,
+section.app#service .app-features>.feature:not(.is-active):hover p {
     /* hover 상태도 클릭 전이면 다른 항목과 동일한 회색으로 유지 */
     color: #737983 !important;
 }
 
 /* 실제 클릭으로 선택된 기능만 강조 */
-section.app#service .app-features > .feature.is-active > span:first-child {
+section.app#service .app-features>.feature.is-active>span:first-child {
     color: #3471f8 !important;
 }
-section.app#service .app-features > .feature.is-active h3,
-section.app#service .app-features > .feature.is-active p {
+
+section.app#service .app-features>.feature.is-active h3,
+section.app#service .app-features>.feature.is-active p {
     color: #1d1d1d !important;
 }
 
@@ -3599,7 +3599,7 @@ section.app#service .phone-screen video.is-alert-scene {
 ========================================================= */
 
 /* app-info의 텍스트와 각 요소 */
-.app-info > .app-info-reveal-item {
+.app-info>.app-info-reveal-item {
     opacity: 0;
     translate: 0 26px;
 
@@ -3611,7 +3611,7 @@ section.app#service .phone-screen video.is-alert-scene {
     will-change: opacity, translate;
 }
 
-.app-info > .app-info-reveal-item.is-scroll-visible {
+.app-info>.app-info-reveal-item.is-scroll-visible {
     opacity: 1;
     translate: 0 0;
 }
@@ -3660,12 +3660,463 @@ section.app#service .phone-screen video.is-alert-scene {
 
 /* 움직임 최소화 설정을 사용하는 환경 */
 @media (prefers-reduced-motion: reduce) {
-    .app-info > .app-info-reveal-item,
+
+    .app-info>.app-info-reveal-item,
     .app-features .app-feature-reveal h3,
     .app-features .app-feature-reveal p,
     .app-phone-reveal {
         transition-duration: 0.01ms;
         transition-delay: 0ms;
         translate: 0 0;
+    }
+}
+
+/* =========================================================
+   KEYPO FLOATING ICONS — 인터랙티브 다운로드 섹션
+   HTML의 #download 영역 전용 스타일
+========================================================= */
+#download.download {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    height: clamp(680px, 88vh, 920px);
+    min-height: 680px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    /* 상단의 .mate 섹션과 연결되는 배경 이미지 */
+    background-color: #dff0fd;
+    background-image: url("../img/background_only.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* .mate 하단의 연한 파랑에서 배경 이미지로 자연스럽게 연결 */
+#download::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 240px;
+    background: linear-gradient(to bottom,
+            rgba(226, 240, 253, 0.78) 0%,
+            rgba(226, 240, 253, 0.48) 28%,
+            rgba(226, 240, 253, 0.18) 62%,
+            rgba(226, 240, 253, 0) 100%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+#download .floating-icons {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#download .float-item {
+    position: absolute;
+    display: block;
+    height: auto;
+    max-width: none;
+    object-fit: contain;
+    opacity: 0;
+    backface-visibility: hidden;
+    z-index: 2;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    touch-action: none;
+    cursor: grab;
+    will-change: transform, opacity;
+}
+
+#download .float-item.is-entering {
+    pointer-events: auto;
+    /* 가벼운 탄성 바운스: transform과 opacity만 움직여 레이아웃 재계산을 피함 */
+    animation: keypoIconPop 0.78s cubic-bezier(0.2, 0.78, 0.22, 1) var(--enter-delay, 0s) both;
+}
+
+#download .float-item.is-floating {
+    opacity: 1;
+    pointer-events: auto;
+    /* 아이콘별 속도와 높이를 다르게 줘 서로 다른 리듬으로 천천히 부유 */
+    animation: keypoIconFloat var(--duration, 8s) ease-in-out infinite;
+    transform-origin: 50% 50%;
+}
+
+#download .float-item.is-dragging {
+    z-index: 1000;
+    cursor: grabbing;
+    animation-play-state: paused !important;
+}
+
+@keyframes keypoIconPop {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 38px, 0) scale(0.62) rotate(var(--pop-start-rotate, -12deg));
+    }
+
+    48% {
+        opacity: 1;
+        transform: translate3d(0, -13px, 0) scale(1.10) rotate(var(--pop-peak-rotate, 7deg));
+    }
+
+    67% {
+        opacity: 1;
+        transform: translate3d(0, 5px, 0) scale(0.96) rotate(calc(var(--tilt, 0deg) - 3deg));
+    }
+
+    84% {
+        transform: translate3d(0, -2px, 0) scale(1.025) rotate(calc(var(--tilt, 0deg) + 1.5deg));
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1) rotate(var(--tilt, 0deg));
+    }
+}
+
+@keyframes keypoIconFloat {
+
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) rotate(var(--tilt, 0deg));
+    }
+
+    20% {
+        transform: translate3d(var(--drift, 12px), var(--float-y, -28px), 0) rotate(calc(var(--tilt, 0deg) + 2deg));
+    }
+
+    43% {
+        transform: translate3d(var(--drift-back, -8px), var(--float-y-soft, -11px), 0) rotate(calc(var(--tilt, 0deg) - 1deg));
+    }
+
+    68% {
+        transform: translate3d(var(--drift, 12px), var(--float-y, -28px), 0) rotate(calc(var(--tilt, 0deg) + 1.5deg));
+    }
+
+    84% {
+        transform: translate3d(var(--drift-back, -8px), var(--float-y-soft, -11px), 0) rotate(var(--tilt, 0deg));
+    }
+}
+
+/* 데스크톱: 아이콘을 넓게 흩어 배치 */
+#download .cart {
+    left: 14%;
+    top: 25%;
+    width: clamp(135px, 16vw, 250px);
+}
+
+#download .receipt {
+    left: 37%;
+    top: 13%;
+    width: clamp(75px, 8.5vw, 135px);
+}
+
+#download .bell {
+    left: 51%;
+    top: 12%;
+    width: clamp(58px, 6.3vw, 100px);
+}
+
+#download .check-one {
+    left: 61%;
+    top: 28%;
+    width: clamp(48px, 5.6vw, 88px);
+}
+
+#download .box-one {
+    left: 71%;
+    top: 41%;
+    width: clamp(100px, 11vw, 170px);
+}
+
+#download .contact {
+    left: 34%;
+    top: 45%;
+    width: clamp(85px, 9vw, 138px);
+}
+
+#download .box-two {
+    left: 47%;
+    top: 55%;
+    width: clamp(82px, 8.7vw, 132px);
+}
+
+#download .truck {
+    left: 65%;
+    top: 60%;
+    width: clamp(180px, 20vw, 315px);
+}
+
+#download .check-two {
+    left: 26%;
+    top: 58%;
+    width: clamp(43px, 5.1vw, 80px);
+}
+
+#download .receipt-two {
+    left: 14%;
+    top: 68%;
+    width: clamp(78px, 8.4vw, 128px);
+}
+
+#download .box-three {
+    left: 40%;
+    top: 73%;
+    width: clamp(72px, 7.8vw, 118px);
+}
+
+#download .payment-card {
+    left: 50%;
+    top: 76%;
+    width: clamp(105px, 12vw, 185px);
+}
+
+#download .magnifier-card {
+    left: 55%;
+    top: 66%;
+    width: clamp(115px, 13vw, 200px);
+}
+
+#download .tag {
+    left: 80%;
+    top: 63%;
+    /* 기존 69% */
+    width: clamp(82px, 9.4vw, 145px);
+}
+
+#download .app-logo-k {
+    left: 4.5%;
+    top: 7%;
+    width: clamp(72px, 7.2vw, 112px);
+}
+
+#download .app-logo-k-two {
+    left: 85%;
+    top: 7%;
+    width: clamp(56px, 5.8vw, 90px);
+}
+
+@media (max-width: 900px) {
+    #download.download {
+        height: 760px;
+        min-height: 760px;
+    }
+
+    #download .cart {
+        left: 5%;
+        top: 22%;
+        width: 25vw;
+    }
+
+    #download .receipt {
+        left: 35%;
+        top: 13%;
+        width: 16vw;
+    }
+
+    #download .bell {
+        left: 68%;
+        top: 16%;
+        width: 13vw;
+    }
+
+    #download .check-one {
+        left: 80%;
+        top: 34%;
+        width: 11vw;
+    }
+
+    #download .box-one {
+        left: 66%;
+        top: 43%;
+        width: 23vw;
+    }
+
+    #download .contact {
+        left: 7%;
+        top: 43%;
+        width: 20vw;
+    }
+
+    #download .box-two {
+        left: 35%;
+        top: 52%;
+        width: 19vw;
+    }
+
+    #download .truck {
+        left: 44%;
+        top: 64%;
+        width: 43vw;
+    }
+
+    #download .check-two {
+        left: 19%;
+        top: 63%;
+        width: 12vw;
+    }
+
+    #download .receipt-two {
+        left: 3%;
+        top: 73%;
+        width: 18vw;
+    }
+
+    #download .box-three {
+        left: 27%;
+        top: 77%;
+        width: 17vw;
+    }
+
+    #download .payment-card {
+        left: 41%;
+        top: 79%;
+        width: 24vw;
+    }
+
+    #download .magnifier-card {
+        left: 58%;
+        top: 72%;
+        width: 25vw;
+    }
+
+    #download .tag {
+        left: 79%;
+        top: 70%;
+        /* 기존 76% */
+        width: 17vw;
+    }
+
+    #download .app-logo-k {
+        left: 3.5%;
+        top: 8%;
+        width: 15vw;
+        max-width: 96px;
+    }
+
+    #download .app-logo-k-two {
+        left: 85%;
+        top: 7%;
+        width: 12vw;
+        max-width: 76px;
+    }
+}
+
+@media (max-width: 520px) {
+    #download.download {
+        height: 720px;
+        min-height: 720px;
+        background-position: center top;
+    }
+
+    #download .cart {
+        left: 2%;
+        top: 23%;
+        width: 31vw;
+    }
+
+    #download .receipt {
+        left: 36%;
+        top: 12%;
+        width: 19vw;
+    }
+
+    #download .bell {
+        left: 69%;
+        top: 17%;
+        width: 16vw;
+    }
+
+    #download .check-one {
+        left: 79%;
+        top: 38%;
+        width: 14vw;
+    }
+
+    #download .box-one {
+        left: 66%;
+        top: 46%;
+        width: 28vw;
+    }
+
+    #download .contact {
+        left: 4%;
+        top: 42%;
+        width: 24vw;
+    }
+
+    #download .box-two {
+        left: 34%;
+        top: 54%;
+        width: 23vw;
+    }
+
+    #download .truck {
+        left: 41%;
+        top: 65%;
+        width: 52vw;
+    }
+
+    #download .check-two {
+        left: 14%;
+        top: 62%;
+        width: 14vw;
+    }
+
+    #download .receipt-two {
+        left: 1%;
+        top: 73%;
+        width: 21vw;
+    }
+
+    #download .box-three {
+        left: 25%;
+        top: 77%;
+        width: 20vw;
+    }
+
+    #download .payment-card {
+        left: 37%;
+        top: 80%;
+        width: 29vw;
+    }
+
+    #download .magnifier-card {
+        left: 57%;
+        top: 72%;
+        width: 30vw;
+    }
+
+    #download .tag {
+        left: 77%;
+        top: 73%;
+        /* 기존 81% */
+        width: 21vw;
+    }
+
+    #download .app-logo-k {
+        left: 3%;
+        top: 7%;
+        width: 17vw;
+        max-width: 82px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    #download .float-item.is-entering,
+    #download .float-item.is-floating {
+        animation: none !important;
+        opacity: 1;
+        transform: none;
     }
 }
