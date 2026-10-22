@@ -91,7 +91,8 @@
             <div class="app-features">
 
                 <!-- 기능별 영상 구간은 data-video-start / data-video-end로 초 단위 지정합니다. -->
-                <button type="button" class="feature" data-video-start="2.25" data-video-end="5.82" aria-pressed="false">
+                <button type="button" class="feature" data-video-start="2.25" data-video-end="5.82"
+                    aria-pressed="false">
                     <span>01</span>
                     <div>
                         <h3>내 아이템</h3>
@@ -99,7 +100,8 @@
                     </div>
                 </button>
 
-                <button type="button" class="feature" data-video-start="6.65" data-video-end="9.65" aria-pressed="false">
+                <button type="button" class="feature" data-video-start="6.65" data-video-end="9.65"
+                    aria-pressed="false">
                     <span>02</span>
                     <div>
                         <h3>스마트 알림</h3>
@@ -107,7 +109,8 @@
                     </div>
                 </button>
 
-                <button type="button" class="feature" data-video-start="10.4" data-video-end="16.15" aria-pressed="false">
+                <button type="button" class="feature" data-video-start="10.4" data-video-end="16.15"
+                    aria-pressed="false">
                     <span>03</span>
                     <div>
                         <h3>반품·교환·A/S</h3>
@@ -115,7 +118,8 @@
                     </div>
                 </button>
 
-                <button type="button" class="feature" data-video-start="16.9" data-video-end="24.85" aria-pressed="false">
+                <button type="button" class="feature" data-video-start="16.9" data-video-end="24.85"
+                    aria-pressed="false">
                     <span>04</span>
                     <div>
                         <h3>스마트 렌즈</h3>
@@ -388,15 +392,60 @@
 
     </section>
 
-    <section class="download" id="download">
-        <div class="download-video">
-            <video autoplay muted loop playsinline src="./video/footer.mp4"></video>
-        </div>
-    </section>
+    <!-- DOWNLOAD / 둥실둥실 움직이는 인터랙티브 아이콘 -->
+    <!-- DOWNLOAD / 둥실둥실 움직이는 인터랙티브 아이콘 -->
+    <section class="download" id="download" aria-label="KEYPO 아이콘 인터랙션">
 
+        <div class="floating-icons" aria-hidden="false">
+
+            <img src="./img/app_icon.png" class="float-item app-logo-k" alt="" draggable="false" aria-hidden="true">
+
+            <img src="./img/KEYPO_new_3D_icons/01_shopping_cart.png" class="float-item cart" alt="" draggable="false"
+                aria-hidden="true">
+
+            <img src="./img/KEYPO_new_3D_icons/02_receipt.png" class="float-item receipt" alt="" draggable="false"
+                aria-hidden="true">
+
+            <img src="./img/KEYPO_new_3D_icons/03_notification_bell.png" class="float-item bell" alt=""
+                draggable="false" aria-hidden="true">
+
+            <img src="./img/KEYPO_new_3D_icons/04_check_badge_blue.png" class="float-item check-one" alt=""
+                draggable="false" aria-hidden="true">
+
+            <img src="./img/KEYPO_new_3D_icons/05_parcel_box_large.png" class="float-item box-one" alt=""
+                draggable="false" aria-hidden="true">
+
+            <img src="./img/KEYPO_new_3D_icons/06_contact_card.png" class="float-item contact" alt="" draggable="false"
+                aria-hidden="true">
+
+            <img src="./img/KEYPO_new_3D_icons/07_parcel_box_medium.png" class="float-item box-two" alt=""
+                draggable="false" aria-hidden="true">
+
+            <img src="./img/KEYPO_new_3D_icons/08_delivery_truck.png" class="float-item truck" alt="" draggable="false"
+                aria-hidden="true">
+
+            <img src="./img/KEYPO_new_3D_icons/09_check_badge_small.png" class="float-item check-two" alt=""
+                draggable="false" aria-hidden="true">
+
+            <img src="./img/KEYPO_new_3D_icons/10_receipt_curled.png" class="float-item receipt-two" alt=""
+                draggable="false" aria-hidden="true">
+
+            <img src="./img/KEYPO_new_3D_icons/11_parcel_box_small.png" class="float-item box-three" alt=""
+                draggable="false" aria-hidden="true">
+
+            <img src="./img/KEYPO_new_3D_icons/12_payment_card.png" class="float-item payment-card" alt=""
+                draggable="false" aria-hidden="true">
+
+            <img src="./img/KEYPO_new_3D_icons/14_product_tag.png" class="float-item tag" alt="" draggable="false"
+                aria-hidden="true">
+
+
+
+        </div>
+
+    </section>
     <!-- FOOTER -->
     <footer class="footer">
-        <!-- 푸터 배경 영상 -->
 
         <div class="footer-brand">
             <p>구매 이후를 한 곳에서, 더 쉽게 관리하세요.</p>
@@ -457,6 +506,8 @@
 
     <!-- 기존 사이트 스크립트 -->
     <script src="js/script.js"></script>
+    <!-- Floating icon interaction (standalone, independent from the legacy site script) -->
+    <script src="js/floating-icons.js"></script>
 </body>
 
 </html>
